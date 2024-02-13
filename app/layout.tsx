@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Link from "next/link";
+import down_icon from "../public/down.svg";
+import Image from "next/image";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +19,37 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <div className="flex bg-[grey] w-full h-[100vh] items-center justify-center">
+          <div className="flex flex-col w-[300px] bg-[white] h-[500px]  gap-[10px]">
+            <Link href={"/"} className="bg-white flex border items-center h-[40px]">
+              <Image src={down_icon} alt='icon' className="w-[24px]"/>
+              <h6>Home</h6>
+            </Link>
+            <Link href={"/option1"} className="bg-white flex border  items-center h-[40px]">
+              <Image src={down_icon} alt='icon' className="w-[24px]"/>
+              <h6>Option 1</h6>
+            </Link>
+            <Link href={"/option2"} className="bg-white flex border items-center h-[40px]">
+              <Image src={down_icon} alt='icon' className="w-[24px]"/>
+              <h6>Option 2</h6>
+            </Link>
+            <Link href={"/option3"} className="bg-white flex border items-center h-[40px]">
+              <Image src={down_icon} alt='icon' className="w-[24px]"/>
+              <h6>Option 3</h6>
+            </Link>
+            <Link href={"/option4"} className="bg-white flex border items-center h-[40px]">
+              <Image src={down_icon} alt='icon' className="w-[24px]"/>
+              <h6>Option 4</h6>
+            </Link>
+            <Link href={"/option5"} className="bg-white flex border items-center h-[40px]">
+              <Image src={down_icon} alt='icon' className="w-[24px]"/>
+              <h6>Option 5</h6>
+            </Link>
+          </div>
+          <div>{children}</div>
+        </div>
+      </body>
     </html>
   );
 }
